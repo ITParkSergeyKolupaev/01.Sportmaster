@@ -1,4 +1,4 @@
-package ru.itpark;
+package re.itpark;
 
 public class SportMasterBonusService {
     public int calculateBonus(int accumulatedPurchaseAmount, int purchaseAmount, int currentBonusAmounnt) {

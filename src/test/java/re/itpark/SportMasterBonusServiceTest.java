@@ -1,4 +1,4 @@
-package ru.itpark;
+package re.itpark;
 
 import org.junit.jupiter.api.Test;
 
