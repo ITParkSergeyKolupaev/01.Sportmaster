@@ -10,16 +10,12 @@ public class SportMasterBonusService {
         int bonusBlueCard = 50;
         int bunusSilverCard = 70;
         int bonusGoldCard = 100;
-        int bonusMultiplier;
-
+        int bonusMultiplier = purchaseAmount / fullRate;
         if (accumulatedPurchaseAmount >= lowerBorderBlueCard && accumulatedPurchaseAmount <= upperBorderBlueCard) {
-            bonusMultiplier = purchaseAmount / fullRate;
             currentBonusAmounnt = currentBonusAmounnt + bonusBlueCard * bonusMultiplier;
         } else if (accumulatedPurchaseAmount >= lowerBorderSilverCard && accumulatedPurchaseAmount <= upperBorderSilverCard) {
-            bonusMultiplier = purchaseAmount / fullRate;
             currentBonusAmounnt = currentBonusAmounnt + bunusSilverCard * bonusMultiplier;
         } else {
-            bonusMultiplier = purchaseAmount / fullRate;
             currentBonusAmounnt = currentBonusAmounnt + bonusGoldCard * bonusMultiplier;
         }
         return currentBonusAmounnt;
