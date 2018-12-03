@@ -1,7 +1,7 @@
 package ru.itpark;
 
 public class SportMasterBonusService {
-    public double calculateBonus(double accumulatedPurchaseAmount, int purchaseAmount, double currentBonusAmounnt) {
+    public int calculateBonus(int accumulatedPurchaseAmount, int purchaseAmount, int currentBonusAmount) {
         int lowerBorderBlueCard = 1;
         int upperBorderBlueCard = 15_000;
         int lowerBorderSilverCard = 15_001;
@@ -10,14 +10,13 @@ public class SportMasterBonusService {
         int bonusBlueCard = 50;
         int bonusSilverCard = 70;
         int bonusGoldCard = 100;
-        double bonusMultiplier = purchaseAmount / fullRate;
-        if (accumulatedPurchaseAmount >= lowerBorderBlueCard && accumulatedPurchaseAmount <= upperBorderBlueCard) {
-            currentBonusAmounnt = currentBonusAmounnt + bonusBlueCard * bonusMultiplier;
-        } else if (accumulatedPurchaseAmount >= lowerBorderSilverCard && accumulatedPurchaseAmount <= upperBorderSilverCard) {
-            currentBonusAmounnt = currentBonusAmounnt + bonusSilverCard * bonusMultiplier;
-        } else {
-            currentBonusAmounnt = currentBonusAmounnt + bonusGoldCard * bonusMultiplier;
-        }
-        return currentBonusAmounnt;
+        purchaseAmount += accumulatedPurchaseAmount;
+        int bonusMultiplier = purchaseAmount / fullRate;
+        if (purchaseAmount >= lowerBorderBlueCard && purchaseAmount <= upperBorderBlueCard) {
+            currentBonusAmount += bonusBlueCard * bonusMultiplier;
+        } else if (purchaseAmount >= lowerBorderSilverCard && purchaseAmount <= upperBorderSilverCard) {
+            currentBonusAmount += bonusSilverCard * bonusMultiplier;
+        } else currentBonusAmount += bonusGoldCard * bonusMultiplier;
+        return currentBonusAmount;
     }
 }

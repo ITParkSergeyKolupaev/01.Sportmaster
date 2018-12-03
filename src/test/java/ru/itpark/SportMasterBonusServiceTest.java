@@ -11,22 +11,22 @@ class SportMasterBonusServiceTest {
         {
             SportMasterBonusService sportMasterBonusService = new SportMasterBonusService();
             double calculateBonus = sportMasterBonusService.calculateBonus(10_000, 6300, 200);
-            assertEquals(500, calculateBonus);
+            assertEquals(1_320, calculateBonus);
         }
         {
             SportMasterBonusService sportMasterBonusService = new SportMasterBonusService();
             double calculateBonus = sportMasterBonusService.calculateBonus(25_000, 30_000, 600);
-            assertEquals(2_700, calculateBonus);
+            assertEquals(4_450, calculateBonus);
         }
         {
             SportMasterBonusService sportMasterBonusService = new SportMasterBonusService();
             double calculateBonus = sportMasterBonusService.calculateBonus(151_000, 80_000, 1_000);
-            assertEquals(9_000, calculateBonus);
+            assertEquals(24_100, calculateBonus);
         }
         {
             SportMasterBonusService sportMasterBonusService = new SportMasterBonusService();
-            double calculateBonus = sportMasterBonusService.calculateBonus(0, 1_000, 0);
-            assertEquals(100, calculateBonus);
+            double   calculateBonus = sportMasterBonusService.calculateBonus(0, 1_000, 0);
+            assertEquals(50, calculateBonus);
         }
     }
 }
