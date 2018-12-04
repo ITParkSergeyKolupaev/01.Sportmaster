@@ -1,0 +1,11 @@
+language: java
+jdk: oraclejdk11
+
+script: mv -e verify
+notifications:
+  email:
+    recipients:
+      - prog.forall.lang@gmail.com
+      on_failure: always
+      on_success: change
+
